@@ -1,0 +1,220 @@
+---
+import "@/styles/globals.css";
+
+import Layout from "../layouts/Layout.astro";
+import { H1, H2, P } from "@/components/Typography";
+import { Header } from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import { Fa1, Fa2, Fa3, Fa4 } from "react-icons/fa6";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import {
+	NavigationMenuItem,
+	NavigationMenuLink,
+	navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+---
+
+<Layout title="Welcome to Astro.">
+	<div
+		class="bg-[url('/IMG_2252.JPEG')] bg-cover bg-bottom bg-no-repeat text-white bg-blend-darken bg-black bg-opacity-50 h-[100vh]"
+	>
+		<div class="container pt-8">
+			<div class="flex-row items-center">
+				<P>Lorem ipsum dolor sit</P>
+				<div class="flex justify-between">
+					<!-- <H1 className="lg:text-9xl">PACS&and;IST</H1> -->
+					<!-- <H1 className="lg:text-9xl">PACS&times;IST</H1> -->
+					<!-- <H1 className="lg:text-9xl">PACS&plus;IST</H1> -->
+					<!-- <H1 className="lg:text-9xl">PACS&dash;IST</H1> -->
+					<!-- <H1 className="lg:text-9xl">PACS &#128626; IST</H1> -->
+					<H1 className="lg:text-9xl">PACS &#128627; IST</H1>
+
+					<div class="flex items-center lg:items-start">
+						<Fa1 className="aspect-square"/>
+						<Fa2 className="aspect-square"/>
+						<Fa3 className="aspect-square"/>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-between mt-5 -mb-4">
+				<Header client:load />
+				<Button
+					client:load
+					className={cn(
+						navigationMenuTriggerStyle(),
+						"text-black rounded-full w-full md:w-auto border-transparent border-2 focus:border-black hover:border-black hover:bg-white",
+					)}
+				>
+					Contact Sales
+				</Button>
+			</div>
+			<H2 className="lg:text-7xl border-none"
+				>Leading innovation in<br />pigging technology</H2
+			>
+			<P>Lorem ipsum dolor sit amet<br />consectetur adipisicing elit.</P>
+			<div class="my-4 flex gap-2 md:block">
+				<Button className="grow bg-primary">Learn more</Button>
+				<Button variant="outline" className="grow text-black border-2 border-transparent focus:border-black">Learn more #2</Button>
+			</div>
+			<div class="grid items-stretch lg:items-center">
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-2 gap-2 mt-8 place-self-center"
+				>
+					<Card
+						client:load
+						className="border-none bg-red-500 text-white lg:max-w-[300px]"
+					>
+						<CardHeader>
+							<CardTitle className="flex gap-2"><Fa1 className="aspect-square" /><span class="grow">Card Title</span></CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Debitis provident maiores id.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Button
+								variant="outline"
+								className="bg-transparent py-1">More</Button
+							>
+						</CardFooter>
+					</Card>
+
+					<Card
+						client:load
+						className="border-none bg-sky-500 text-white lg:max-w-[300px]"
+					>
+						<CardHeader>
+							<CardTitle className="flex gap-2"><Fa2 className="aspect-square" /><span class="grow">Card Title</span></CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Debitis provident maiores id.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Button
+								variant="outline"
+								className="bg-transparent py-1">More</Button
+							>
+						</CardFooter>
+					</Card>
+
+					<Card
+						client:load
+						className="border-none bg-emerald-500 text-white lg:max-w-[300px]"
+					>
+						<CardHeader>
+							<CardTitle className="flex gap-2"><Fa3 className="aspect-square" /><span class="grow">Card Title</span></CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Debitis provident maiores id.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Button
+								variant="outline"
+								className="bg-transparent py-1">More</Button
+							>
+						</CardFooter>
+					</Card>
+
+					<Card
+						client:load
+						className="border-none bg-slate-500 text-white lg:max-w-[300px]"
+					>
+						<CardHeader>
+							<CardTitle className="flex gap-2"><Fa4 className="aspect-square" /><span class="grow">Card Title</span></CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur
+								adipisicing elit. Debitis provident maiores id.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Button
+								variant="outline"
+								className="bg-transparent py-1">More</Button
+							>
+						</CardFooter>
+					</Card>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="container h-[100vh]"
+	></div>
+</Layout>
+
+<!-- <style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style> -->

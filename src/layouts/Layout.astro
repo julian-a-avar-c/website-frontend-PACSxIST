@@ -1,0 +1,100 @@
+---
+// import '@fontsource/atkinson-hyperlegible/400.css';
+// import '@fontsource/atkinson-hyperlegible/400-italic.css';
+// import '@fontsource/atkinson-hyperlegible/700.css';
+// import '@fontsource/atkinson-hyperlegible/700-italic.css';
+
+import { ModeToggle } from "@/components/ModeToggle";
+import { InputWithButton } from "@/components/InputWithButton";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuIndicator,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+	NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import NavigationMenuDemo from "@/components/NavigationMenuDemo.jsx";
+import { Header } from "@/components/Header.jsx";
+import { H1 } from "@/components/Typography.jsx";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<script is:inline>
+	const getThemePreference = () => {
+		if (
+			typeof localStorage !== "undefined" &&
+			localStorage.getItem("theme")
+		) {
+			return localStorage.getItem("theme");
+		}
+		return window.matchMedia("(prefers-color-scheme: dark)").matches
+			? "dark"
+			: "light";
+	};
+
+	const isDark = getThemePreference() === "dark";
+	document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+	if (typeof localStorage !== "undefined") {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains("dark");
+			localStorage.setItem("theme", isDark ? "dark" : "light");
+		});
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class"],
+		});
+	}
+</script>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<!-- <style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style> -->
