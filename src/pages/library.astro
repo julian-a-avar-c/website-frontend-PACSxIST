@@ -1,20 +1,38 @@
 ---
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 
-import Layout from '../layouts/Layout.astro';
-import { H2, LI, P, UL } from '@/components/Typography';
-import { Header } from '@/components/Header';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Fa1 } from 'react-icons/fa6';
-import { Button } from '@/components/ui/button';
+import Layout from "@/layouts/Layout.astro";
+import { H2, LI, P, UL } from "@/components/Typography";
+import { Header } from "@/components/Header";
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import { Fa1 } from "react-icons/fa6";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { LibraryTabs } from "@/components/LibraryTabs";
 ---
 
 <Layout title="Welcome to Astro.">
     <Header />
-	<div class="container pt-8 pb-8 min-h-[100vh] h-auto">
-		<H2>Selecting the Best Pigging System for Your Needs</H2>
+    <div class="container pt-8 pb-8 min-h-[100vh] h-auto">
+        <H2>Selecting the Best Pigging System for Your Needs</H2>
 
-        <P>Pigging Solutions systems are ideal for a wide range of product transfer applications. Our standard pigging systems, outlined under our Typical Applications page, often address the needs and budget considerations for many applications. When selecting the most appropriate pigging system, the decision is ultimately dependent on a cost/benefit analysis that considers application needs, system component costs and anticipated return on investment. Any of our pigging solutions can be modified to meet your specific application requirements.</P>
+        <P>
+            Pigging Solutions systems are ideal for a wide range of product
+            transfer applications. Our standard pigging systems, outlined under
+            our Typical Applications page, often address the needs and budget
+            considerations for many applications. When selecting the most
+            appropriate pigging system, the decision is ultimately dependent on
+            a cost/benefit analysis that considers application needs, system
+            component costs and anticipated return on investment. Any of our
+            pigging solutions can be modified to meet your specific application
+            requirements.
+        </P>
 
         <H2>Questions to ask when selecting a pigging system:</H2>
         <UL>
@@ -22,57 +40,76 @@ import { Button } from '@/components/ui/button';
             <LI>
                 What is the ideal pigging process?
                 <UL>
-                    <LI>In a 1-Way pigging process the pig is launched at the source and removed at the receiving destination</LI>
-                    <LI>In a 2-Way process the pig is returned to a home base pig launcher after being detected at the receiving destination</LI>
+                    <LI
+                        >In a 1-Way pigging process the pig is launched at the
+                        source and removed at the receiving destination</LI
+                    >
+                    <LI
+                        >In a 2-Way process the pig is returned to a home base
+                        pig launcher after being detected at the receiving
+                        destination</LI
+                    >
                 </UL>
             </LI>
-            <LI>Does the application require pigging from a single source to a single destination or should it accommodate multiple sources and/or multiple destinations?</LI>
+            <LI
+                >Does the application require pigging from a single source to a
+                single destination or should it accommodate multiple sources
+                and/or multiple destinations?</LI
+            >
             <LI>
                 What type of piping should be used?
                 <UL>
-                    <LI>Typical piping choices are Schedule 40, Schedule 10, or sanitary tube and stainless or carbon steel materials of construction.</LI>
+                    <LI
+                        >Typical piping choices are Schedule 40, Schedule 10, or
+                        sanitary tube and stainless or carbon steel materials of
+                        construction.</LI
+                    >
                 </UL>
             </LI>
-            <LI>What are the chemical and physical characteristics of the products to be transferred using the common pigged transfer line?</LI>
+            <LI
+                >What are the chemical and physical characteristics of the
+                products to be transferred using the common pigged transfer
+                line?</LI
+            >
             <LI>What is the transfer product temperature(s)?</LI>
-            <LI>Is line flushing or CIP (clean-in-place) needed after pigging? If so, will the pig be included in the CIP process?</LI>
+            <LI
+                >Is line flushing or CIP (clean-in-place) needed after pigging?
+                If so, will the pig be included in the CIP process?</LI
+            >
         </UL>
 
-        <P>The above questions help establish the type of pigging system that will best suit your needs. Pigging Solutions works with you directly to ensure these questions and more are answered during a joint application review so the final pigging system is the ideal solution for your application.</P>
+        <P
+            >The above questions help establish the type of pigging system that
+            will best suit your needs. Pigging Solutions works with you directly
+            to ensure these questions and more are answered during a joint
+            application review so the final pigging system is the ideal solution
+            for your application.</P
+        >
 
-        <P>For more information about our Pigging Systems, Contact Us or Request a Quote.</P>
-        
+        <P
+            >For more information about our Pigging Systems, Contact Us or
+            Request a Quote.</P
+        >
+
         <H2>Common Pigged Transfer Application Design Sketches</H2>
 
-        <P>Pigging Solutions develops application resolutions tailored to each client’s individual project needs. Listed below are typical transfer applications and pigged transfer process solutions that meet many project needs. Don't see a pigging solution that meets your requirements? Contact us today for an application review.</P>
-        
-        <P>Click on each system to view the design sketch and select system components to learn more.</P>
-        
+        <P
+            >Pigging Solutions develops application resolutions tailored to each
+            client’s individual project needs. Listed below are typical transfer
+            applications and pigged transfer process solutions that meet many
+            project needs. Don't see a pigging solution that meets your
+            requirements? Contact us today for an application review.</P
+        >
+
+        <P
+            >Click on each system to view the design sketch and select system
+            components to learn more.</P
+        >
+
         <H2>Typical Application Sketches</H2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-2 gap-2 mt-8 place-self-center">
-            {["Single Source to Single Destination",
-            "Single Source to Multiple Destinations",
-            "Multiple Sources to Multiple Destinations",
-            "Clean-In-Place Pigging System"].map((text) =>
-                <Card client:load key={text} className="lg:max-w-[300px] text-white border-none bg-gray-950 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-80">
-                    <CardHeader>
-                        <CardTitle className="flex gap-2"><Fa1 className="aspect-square" /><span class="grow">Card Title</span></CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        {text}
-                    </CardContent>
-                    <CardFooter>
-                        <Button
-                            variant="outline"
-                            className="bg-transparent py-1">More</Button
-                        >
-                    </CardFooter>
-                </Card>
-            )}
+        <div>
+            <LibraryTabs client:load />
         </div>
-
-        Hey
-	</div>
-
+    </div>
 </Layout>
