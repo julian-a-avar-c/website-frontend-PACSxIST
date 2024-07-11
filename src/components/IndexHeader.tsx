@@ -53,38 +53,28 @@ const components: { title: string; href: string; description: string }[] = [
     },
 ]
 
-export const Header: React.FC = () => {
+export const IndexHeader: React.FC = () => {
     return (
         <NavigationMenu className={cn("hidden md:block")}>
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/articles" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:bg-transparent focus:border-white")}>
-                        {/* PACS &and; IST
-                        PACS &times; IST
-                        PACS &plus; IST
-                        PACS &dash; IST
-                        PACS &#128626; IST */}
-                        IST &#128627; PACS
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink href="/articles" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:bg-transparent focus:border-white")}>
+                    <NavigationMenuLink href="/articles" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:text-white hover:bg-transparent focus:text-white focus:border-white")}>
                         Articles
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/library" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:bg-transparent focus:border-white")}>
+                    <NavigationMenuLink href="/library" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:text-white hover:bg-transparent focus:text-white focus:border-white")}>
                         Library
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuLink href="/catalog" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:bg-transparent focus:border-white")}>
+                    <NavigationMenuLink href="/catalog" className={cn(navigationMenuTriggerStyle(), "bg-transparent border-2 border-transparent hover:border-white font-bold hover:text-white hover:bg-transparent focus:text-white focus:border-white")}>
                         IST Catalog
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuLink href="/solutions">
-                        <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent font-bold border-2 border-transparent hover:border-white focus:bg-transparent focus:border-white")}>Solutions</NavigationMenuTrigger>
+                        <NavigationMenuTrigger className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:text-white font-bold border-2 border-transparent hover:border-white focus:bg-transparent focus:text-white focus:border-white")}>Solutions</NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                                 <ListItem href="/solutions/energy" title="Energy Saving">
